@@ -9,9 +9,9 @@ app.use(morgan('combined'));
 app.use(bodyParser.json());
 app.use(cors());
 
-app.get('/status', (req, res)=>{
+app.post('/register', (req, res)=>{
     res.send({
-        message:'hello worls'
+        message: `${req.body.email} registered`
     });
 });
 app.listen(process.env.PORT || 3000);
